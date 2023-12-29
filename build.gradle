@@ -1,0 +1,37 @@
+plugins {
+    id 'application'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+group 'com.aarengee'
+version '0.0.1'
+
+application {
+    mainClass = 'com.aarengee.Main'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src/main/java/"]
+        }
+    }
+    test {
+        java {
+            srcDirs = ["src/test/"]
+        }
+    }
+}
+
+apply from: "dependencies.gradle"
+
+test {
+    useJUnitPlatform()
+}
+
